@@ -1,4 +1,5 @@
 package com.example.cursos.Interface
+import com.example.cursos.Modelo.dataDetalleMateria
 import retrofit2.http.GET
 import retrofit2.http.POST
 import retrofit2.http.Query
@@ -10,7 +11,8 @@ interface ApiService {
     @GET("obtener_registros.php")
     suspend fun obtenerRegistros(@Query("carrera_id") carreraId: Int): List<dataRegistro>
 
-
+    @GET("detalle_curso.php")
+    suspend fun detalleMateria(@Query("curso_id") cursoId: Int): List<dataDetalleMateria>
 
 
 }
