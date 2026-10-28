@@ -12,7 +12,6 @@ import com.example.cursos.Presentador.clsCatalogoCursoPresentador
 import com.example.cursos.Presentador.clsCatalogoCursoPresentadorImpl
 import com.example.cursos.R
 
-// SIN paréntesis () después de catalogoCursoVista
 class CatalogoCurso : AppCompatActivity(), catalogoCursoVista {
 
     private lateinit var adaptador: CursoAdaptador
