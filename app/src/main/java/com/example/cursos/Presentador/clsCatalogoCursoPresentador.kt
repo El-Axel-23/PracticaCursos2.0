@@ -11,11 +11,7 @@ interface clsCatalogoCursoPresentador {
     fun cargarCursos(carreraId: Int)
 }
 
-class clsCatalogoCursoPresentadorImpl(
-    private val vista: catalogoCursoVista,
-    private val apiService: ApiService
-) : clsCatalogoCursoPresentador {
-
+class clsCatalogoCursoPresentadorImpl(private val vista: catalogoCursoVista, private val apiService: ApiService) : clsCatalogoCursoPresentador {
     override fun cargarCursos(carreraId: Int) {
         CoroutineScope(Dispatchers.IO).launch {
             try {

@@ -1,5 +1,6 @@
 package com.example.cursos.Interface
 import com.example.cursos.Modelo.dataCarreras
+import com.example.cursos.Modelo.dataCurso
 import com.example.cursos.Modelo.dataDetalleMateria
 import com.example.cursos.Modelo.dataRegistro
 import com.example.cursos.Modelo.datarespuestaAlumno
@@ -19,6 +20,9 @@ interface ApiService {
 
     @GET("detalle_curso.php")
     suspend fun detalleMateria(@Query("curso_id") cursoId: Int): List<dataDetalleMateria>
+
+    @GET("obtener_cursos.php")
+    suspend fun obtenerCursos(@Query("carrera_id") carreraId: Int): List<dataCurso>
 
     @FormUrlEncoded
     @POST("obtener_alumno.php")

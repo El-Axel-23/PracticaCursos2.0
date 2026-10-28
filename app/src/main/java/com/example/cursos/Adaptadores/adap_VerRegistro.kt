@@ -34,7 +34,7 @@ class adap_VerRegistro(private var listaRegistros: List<dataRegistro>):
         holder.txtInscritos.text = "${registro.inscritos} inscritos"
         holder.txtCupo.text = "/ ${registro.cupo} total"
 
-        val baseUrl = "http://192.168.1.8/cursos_api/"
+        val baseUrl = "http://10.120.107.122/cursos_api/"
         Glide.with(holder.itemView.context)
             .load(baseUrl + registro.urlImagen)
             .placeholder(android.R.drawable.ic_menu_gallery)

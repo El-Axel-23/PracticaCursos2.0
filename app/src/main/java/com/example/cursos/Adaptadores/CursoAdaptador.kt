@@ -36,7 +36,7 @@ class CursoAdaptador(
         holder.tvTituloCurso.text = curso.nombre
         holder.tvSalonCurso.text = "Salón: ${curso.salon}"
 
-        val baseUrl = "http://192.168.1.8/cursos_api/"
+        val baseUrl = "http://10.120.107.122/cursos_api/"
         Glide.with(holder.itemView.context)
             .load(baseUrl + curso.imagenNombre)
             .placeholder(android.R.drawable.ic_menu_gallery)
