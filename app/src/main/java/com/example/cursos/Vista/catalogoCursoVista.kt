@@ -1,4 +1,4 @@
-package com.example.practicacursos.Vista
+package com.example.cursos.Vista
 
 import com.example.cursos.Modelo.dataCurso
 
