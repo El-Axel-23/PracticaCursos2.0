@@ -7,6 +7,7 @@ import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.cursos.Modelo.dataRegistro
 import com.example.cursos.R
 
@@ -22,7 +23,7 @@ class adap_VerRegistro(private var listaRegistros: List<dataRegistro>):
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RegistroViewHolder {
         val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_ver_registro, parent, false)
+            .inflate(R.layout.item_registro, parent, false)
         return RegistroViewHolder(view)
     }
     override fun onBindViewHolder(holder: RegistroViewHolder, position: Int) {
