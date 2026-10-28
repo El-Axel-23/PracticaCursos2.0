@@ -11,7 +11,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.viewpager2.widget.ViewPager2
 import com.example.cursos.Presentador.clsDetalleMateriaPresentador
-import com.example.cursos.Adaptador.GaleriaAdaptador
+import com.example.cursos.Adaptadores.GaleriaAdaptador
 import com.example.cursos.Modelo.dataDetalleMateria
 import com.example.cursos.R
 
