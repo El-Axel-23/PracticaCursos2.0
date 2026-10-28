@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="12dp">
+
+    <TextView
+        android:id="@+id/txtTituloRegistros"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="ESTADO DE INSCRIPCIONES"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <Spinner
+        android:id="@+id/spnCarreras"
+        android:layout_width="391dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="12dp" />
+
+    <TextView
+        android:id="@+id/txtTotal"
+        android:layout_width="387dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="8dp"
+        android:gravity="end"
+        android:text="Total: 0" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvRegistros"
+        android:layout_width="match_parent"
+        android:layout_height="589dp"
+        android:layout_marginTop="8dp"
+        android:layout_weight="1" />
+
+    <Button
+        android:id="@+id/btnVolverCatalogo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="VOLVER AL CATÁLOGO" />
+</LinearLayout>

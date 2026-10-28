@@ -22,7 +22,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Vista.registrocursos"
+            android:name=".Vista.Activityver_Registro"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
     </application>
