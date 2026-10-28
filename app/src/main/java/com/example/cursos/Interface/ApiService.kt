@@ -1,4 +1,6 @@
 package com.example.cursos.Interface
+import com.example.cursos.Modelo.dataCarreras
+import com.example.cursos.Modelo.dataRegistro
 import retrofit2.http.GET
 import retrofit2.http.POST
 import retrofit2.http.Query
