@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- 1. Ícono de Perfil  -->
+    <item
+        android:id="@+id/action_profile"
+        android:icon="@drawable/ic_profile"
+        android:title="Perfil"
+        app:showAsAction="always" />
+
+    <!-- 2. Opción en el menú desplegable de 3 puntos -->
+    <item
+        android:id="@+id/action_options"
+        android:title="Opciones"
+        app:showAsAction="never" />
+</menu>
