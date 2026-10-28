@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="6dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="4dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="8dp">
+
+        <!-- 1. Imagen del Curso -->
+        <ImageView
+            android:id="@+id/ivCurso"
+            android:layout_width="0dp"
+            android:layout_height="110dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+        <!-- 2. Título del Curso -->
+        <TextView
+            android:id="@+id/tvTituloCurso"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="6dp"
+            android:layout_marginEnd="6dp"
+            android:gravity="center"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            tools:text="PROGRAMACIÓN AVANZADA"
+            app:layout_constraintTop_toBottomOf="@id/ivCurso"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- 3. Salón -->
+        <TextView
+            android:id="@+id/tvSalonCurso"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:gravity="center"
+            android:textSize="12sp"
+            android:textColor="@android:color/darker_gray"
+            tools:text="Salón: A-102"
+            app:layout_constraintTop_toBottomOf="@id/tvTituloCurso"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- 4. Botón Ver Detalle -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnVerDetalle"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="2dp"
+            android:text="VER DETALLE"
+            android:textSize="9sp"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:backgroundTint="#1560BD"
+            app:cornerRadius="6dp"
+            app:layout_constraintTop_toBottomOf="@id/tvSalonCurso"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/btnRegistrarse"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <!-- 5. Botón Registrarse -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnRegistrarse"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="4dp"
+            android:text="REGISTRARSE"
+            android:textSize="9sp"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:backgroundTint="#2E7D32"
+            app:cornerRadius="6dp"
+            app:layout_constraintTop_toBottomOf="@id/tvSalonCurso"
+            app:layout_constraintStart_toEndOf="@id/btnVerDetalle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>
