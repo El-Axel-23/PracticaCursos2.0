@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Cursos</string>
+    <string name="btnRegresar">BACK</string>
+    <string name="lblDescripcion">DESCRIPCIÓN:</string>
+    <string name="lblEspacio">ESPACIO:</string>
+    <string name="lblTotalHoras">TOTAL HORAS:</string>
+    <string name="lblDiasAtencion">DÍAS DE ATENCIÓN:</string>
 </resources>

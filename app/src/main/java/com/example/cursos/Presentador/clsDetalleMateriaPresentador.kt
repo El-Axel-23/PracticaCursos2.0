@@ -1,8 +1,8 @@
 package com.example.cursos.Presentador
 
-import com.example.practicacursos.Modelo.clsDetalleMateriaModelo
-import com.example.practicacursos.Modelo.dataDetalleMateria
-import com.example.practicacursos.Vista.DetalleMateriaActivity
+import com.example.cursos.Modelo.clsDetalleMateriaModelo
+import com.example.cursos.Modelo.dataDetalleMateria
+import com.example.cursos.Vista.DetalleMateriaActivity
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
