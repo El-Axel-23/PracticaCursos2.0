@@ -8,15 +8,22 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class clsDetalleMateriaPresentador(private val vista: DetalleMateriaActivity) {
-    private val modelo = clsDetalleMateriaModelo()
 
+    private val modelo = clsDetalleMateriaModelo()
     fun cargarDetalle(materiaId: Int) {
         CoroutineScope(Dispatchers.Main).launch {
+
             try {
-                val listaImagenes: List<dataDetalleMateria> = modelo.obtenerDetalleMateria(materiaId)
-                vista.mostrarImagenes(listaImagenes)
+                val listaDetalle = modelo.obtenerDetalleMateria(materiaId)
+                val materia = listaDetalle.firstOrNull()
+                if (materia != null) {
+                    vista.mostrarDetalle(materia)
+                    vista.mostrarImagenes(listaDetalle)
+                } else { vista.mostrarError("No se encontró información del curso.")
+                }
+
             } catch (e: Exception) {
-                vista.mostrarError("Error al cargar detalle: " + e.localizedMessage)
+                vista.mostrarError("Error al cargar el detalle: " + (e.localizedMessage ?: "Error desconocido"))
             }
         }
     }

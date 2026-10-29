@@ -30,7 +30,5 @@ interface ApiService {
 
     @FormUrlEncoded
     @POST("registrar_cursos.php")
-    suspend fun registrarInscripcion(@Field("matricula")matricula: String,
-                                     @Field("curso_id")cursoId: Int,
-                                     @Field("fecha_registro")fechaRegistro: String): datarespuestaInscripcion
+    suspend fun registrarInscripcion(@Field("matricula")matricula: String, @Field("curso_id")cursoId: Int, @Field("fecha_registro")fechaRegistro: String): datarespuestaInscripcion
 }

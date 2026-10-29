@@ -17,8 +17,7 @@ data class dataDetalleMateria(
     @SerialName("dias_atencion") val diasatencion: String = "",
     @SerialName("horario") val horario: String = "",
     @SerialName("cupo_maximo") val cupomaximo: Int = 0
-)
-{
+) {
     override fun toString(): String {
         return nombre
     }
