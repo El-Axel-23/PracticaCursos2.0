@@ -14,7 +14,7 @@ data class dataCurso (
     @SerialName("salon")
     val salon: String = "",
 
-    @SerialName("imagen_nombre")
+    @SerialName("url_imagen")
     val imagenNombre: String = "",
 
     @SerialName("descripcion")
