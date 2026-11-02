@@ -33,6 +33,9 @@
             android:name=".Vista.registrocursos"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".Vista.VerRegistrosActivity"
+            android:exported="false" />
     </application>
 
 </manifest>

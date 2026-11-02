@@ -1,4 +1,3 @@
-
 package com.example.cursos.Adaptadores
 
 import android.view.LayoutInflater

@@ -1,44 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/main"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="12dp">
+    android:background="#F2F4F7">
 
-    <TextView
-        android:id="@+id/txtTituloRegistros"
-        android:layout_width="match_parent"
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="ESTADO DE INSCRIPCIONES"
-        android:textSize="18sp"
-        android:textStyle="bold" />
+        android:background="#1560BD"
+        android:minHeight="?attr/actionBarSize"
+        app:navigationIcon="?attr/homeAsUpIndicator"
+        app:title="ESTADO DE INSCRIPCIONES"
+        app:titleTextColor="@android:color/white"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
-    <Spinner
-        android:id="@+id/spnCarreras"
-        android:layout_width="391dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="12dp" />
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardFiltro"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="2dp"
+        app:strokeColor="#1560BD"
+        app:strokeWidth="1dp"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="8dp">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@mipmap/ic_launcher" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Filtrar por Carrera:"
+                    android:textColor="#555555"
+                    android:textSize="12sp" />
+
+                <Spinner
+                    android:id="@+id/spnCarrera"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp" />
+            </LinearLayout>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
 
     <TextView
-        android:id="@+id/txtTotal"
-        android:layout_width="387dp"
-        android:layout_height="25dp"
-        android:layout_marginTop="8dp"
-        android:gravity="end"
-        android:text="Total: 0" />
+        android:id="@+id/tvTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="Total: 0"
+        android:textColor="#222222"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/cardFiltro"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvRegistros"
-        android:layout_width="match_parent"
-        android:layout_height="589dp"
-        android:layout_marginTop="8dp"
-        android:layout_weight="1" />
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="8dp"
+        android:clipToPadding="false"
+        android:paddingHorizontal="16dp"
+        app:layout_constraintTop_toBottomOf="@id/tvTotal"
+        app:layout_constraintBottom_toTopOf="@id/btnVolverCatalogo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btnVolverCatalogo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="VOLVER AL CATÁLOGO" />
-</LinearLayout>
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:layout_margin="16dp"
+        android:text="VOLVER AL CATÁLOGO"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        app:backgroundTint="#1560BD"
+        app:cornerRadius="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

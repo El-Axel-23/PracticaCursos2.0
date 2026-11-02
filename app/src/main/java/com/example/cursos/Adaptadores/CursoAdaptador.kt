@@ -1,4 +1,4 @@
-package com.example.cursos.Adaptador
+package com.example.cursos.Adaptadores
 
 import android.graphics.drawable.Drawable
 import android.net.Uri
@@ -67,10 +67,8 @@ class CursoAdaptador(
         val limpio = nombre?.trim()?.replace("\\", "/")
         if (limpio.isNullOrEmpty()) return null
 
-        // Si ya es una URL completa, se usa tal cual
         if (limpio.startsWith("http://") || limpio.startsWith("https://")) return limpio
 
-        // Si trae carpetas (cursos/ia.jpg, upload/cursos/ia.jpg), se queda solo con el archivo
         val archivo = limpio.substringAfterLast("/")
         return BASE_IMG + Uri.encode(archivo)
     }

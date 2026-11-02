@@ -1,14 +1,19 @@
+
 package com.example.cursos.Modelo
 
 class clsVerRegistrosModelo {
 
-    suspend fun obtenerCarreras(): List<dataCarreras>{
-        val listafinal = mutableListOf(dataCarreras(0,"Todas las carreras"))
-        listafinal.addAll(RetrofitCliente.apiService.obtenerCarreras())
-        return listafinal
-    }
-    suspend fun obtenerRegistros(carreraid : Int): List<dataRegistro>{
-        return RetrofitCliente.apiService.obtenerRegistros(carreraid)
+    suspend fun obtenerCarreras(): List<dataCarreras> {
+        val listaFinal = mutableListOf(
+            dataCarreras(0, "Todas las carreras")
+        )
+
+        listaFinal.addAll(RetrofitCliente.apiService.obtenerCarreras())
+
+        return listaFinal
     }
 
+    suspend fun obtenerRegistros(carreraId: Int): dataRespuestaRegistros {
+        return RetrofitCliente.apiService.obtenerRegistros(carreraId)
+    }
 }
