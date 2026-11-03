@@ -3,15 +3,12 @@ package com.example.cursos.Presentador
 
 import com.example.cursos.Modelo.clsVerRegistrosModelo
 import com.example.cursos.Modelo.dataCarreras
-import com.example.cursos.Modelo.dataRegistro
 import com.example.cursos.Vista.VerRegistrosActivity
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class clsVerRegistrosPresentador(
-    private val vista: VerRegistrosActivity
-) {
+class clsVerRegistrosPresentador(private val vista: VerRegistrosActivity) {
 
     private val modelo = clsVerRegistrosModelo()
 
@@ -42,10 +39,7 @@ class clsVerRegistrosPresentador(
             try {
                 val respuesta = modelo.obtenerRegistros(carreraId)
 
-                vista.mostrarRegistros(
-                    respuesta.cursos,
-                    respuesta.total
-                )
+                vista.mostrarRegistros(respuesta.cursos, respuesta.total)
 
             } catch (e: Exception) {
                 vista.mostrarError(

@@ -37,7 +37,7 @@ class GaleriaAdaptador(
     ) {
         val imagen = listaImagenes[position]
 
-        val baseUrl = "http://192.168.1.69/cursos_api/"
+        val baseUrl = "http://10.86.195.122/cursos_api/"
         val rutaImagen = imagen.urlimagen.trim()
 
         val urlCompleta = if (rutaImagen.startsWith("http")) {

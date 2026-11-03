@@ -25,7 +25,7 @@ class CursoAdaptador(
 ) : RecyclerView.Adapter<CursoAdaptador.CursoViewHolder>() {
 
     companion object {
-        private const val BASE_IMG = "http://192.168.1.69/cursos_api/upload/cursos/"
+        private const val BASE_IMG = "http://10.86.195.122/cursos_api/upload/cursos/"
         private const val TAG = "GLIDE"
     }
 

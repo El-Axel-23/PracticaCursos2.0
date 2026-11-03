@@ -14,17 +14,14 @@ import com.example.cursos.R
 class DetalleMateriaActivity : AppCompatActivity() {
 
     private lateinit var presenter: clsDetalleMateriaPresentador
-
     private lateinit var btnRegresar: Button
     private lateinit var vpGaleria: ViewPager2
-
     private lateinit var txtNombre: TextView
     private lateinit var txtCodigo: TextView
     private lateinit var txtDescripcion: TextView
     private lateinit var txtEspacio: TextView
     private lateinit var txtTotalHoras: TextView
     private lateinit var txtDiasAtencion: TextView
-
     private lateinit var adapterGaleria: GaleriaAdaptador
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -39,7 +36,6 @@ class DetalleMateriaActivity : AppCompatActivity() {
         txtEspacio = findViewById(R.id.txtdetalleEspacio)
         txtTotalHoras = findViewById(R.id.txtdetalleTotalHoras)
         txtDiasAtencion = findViewById(R.id.txtdetalleDiasAtencion)
-
         adapterGaleria = GaleriaAdaptador(emptyList())
         vpGaleria.adapter = adapterGaleria
 
@@ -69,10 +65,6 @@ class DetalleMateriaActivity : AppCompatActivity() {
     }
 
     fun mostrarError(mensaje: String) {
-        Toast.makeText(
-            this,
-            mensaje,
-            Toast.LENGTH_LONG
-        ).show()
+        Toast.makeText(this, mensaje, Toast.LENGTH_LONG).show()
     }
 }
