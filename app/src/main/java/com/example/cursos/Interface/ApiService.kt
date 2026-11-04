@@ -6,6 +6,7 @@ import com.example.cursos.Modelo.dataRegistro
 import com.example.cursos.Modelo.dataRespuestaRegistros
 import com.example.cursos.Modelo.datarespuestaAlumno
 import com.example.cursos.Modelo.datarespuestaInscripcion
+import retrofit2.http.Body
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
 import retrofit2.http.GET
@@ -23,11 +24,9 @@ interface ApiService {
     @GET("obtener_cursos.php")
     suspend fun obtenerCursos(@Query("carrera_id") carreraId: Int): List<dataCurso>
 
-    @FormUrlEncoded
-    @POST("obtener_alumno.php")
-    suspend fun obtenerAlumno(@Field("matricula")matricula: String): datarespuestaAlumno
+    @POST("buscaralumno.php") // Envía la matrícula al servidor para buscar los datos del alumno
+    suspend fun obtenerAlumno(@Body datos: datarespuestaAlumno): datarespuestaAlumno
 
-    @FormUrlEncoded
-    @POST("registrar_cursos.php")
-    suspend fun registrarInscripcion(@Field("matricula")matricula: String, @Field("curso_id")cursoId: Int, @Field("fecha_registro")fechaRegistro: String): datarespuestaInscripcion
+    @POST("confirmarinscripcion.php") // Envía los datos del alumno y del curso para guardar su inscripción
+    suspend fun registrarInscripcion(@Body datos: datarespuestaInscripcion): datarespuestaInscripcion
 }
