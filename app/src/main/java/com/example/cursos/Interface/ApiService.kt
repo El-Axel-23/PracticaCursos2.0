@@ -24,9 +24,9 @@ interface ApiService {
     @GET("obtener_cursos.php")
     suspend fun obtenerCursos(@Query("carrera_id") carreraId: Int): List<dataCurso>
 
-    @POST("buscaralumno.php") // Envía la matrícula al servidor para buscar los datos del alumno
+    @POST("buscaralumno.php")
     suspend fun obtenerAlumno(@Body datos: datarespuestaAlumno): datarespuestaAlumno
 
-    @POST("confirmarinscripcion.php") // Envía los datos del alumno y del curso para guardar su inscripción
+    @POST("confirmarinscripcion.php")
     suspend fun registrarInscripcion(@Body datos: datarespuestaInscripcion): datarespuestaInscripcion
 }
