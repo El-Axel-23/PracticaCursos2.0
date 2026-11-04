@@ -15,7 +15,7 @@ import com.example.cursos.Modelo.dataRegistro
 import com.example.cursos.R
 
 class RegistroAdaptador(private var lista: List<dataRegistro> = emptyList()) : RecyclerView.Adapter<RegistroAdaptador.VH>() {
-    val urlBase = "http://192.168.137.18/cursos_api/"
+    val urlBase = "http://10.86.195.122/cursos_api/"
     class VH(v: View) : RecyclerView.ViewHolder(v) {
         val img: ImageView = v.findViewById(R.id.imgCurso)
         val nombre: TextView = v.findViewById(R.id.tvNombre)

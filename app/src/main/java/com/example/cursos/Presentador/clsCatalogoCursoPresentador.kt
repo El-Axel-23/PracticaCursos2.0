@@ -8,10 +8,30 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 interface clsCatalogoCursoPresentador {
+    fun cargarCarreras()
     fun cargarCursos(carreraId: Int)
 }
 
-class clsCatalogoCursoPresentadorImpl(private val vista: catalogoCursoVista, private val apiService: ApiService) : clsCatalogoCursoPresentador {
+class clsCatalogoCursoPresentadorImpl(
+    private val vista: catalogoCursoVista,
+    private val apiService: ApiService
+) : clsCatalogoCursoPresentador {
+
+    override fun cargarCarreras() {
+        CoroutineScope(Dispatchers.IO).launch {
+            try {
+                val lista = apiService.obtenerCarreras()
+                withContext(Dispatchers.Main) {
+                    vista.mostrarCarreras(lista)
+                }
+            } catch (e: Exception) {
+                withContext(Dispatchers.Main) {
+                    vista.mostrarError("Error al cargar carreras: ${e.localizedMessage}")
+                }
+            }
+        }
+    }
+
     override fun cargarCursos(carreraId: Int) {
         CoroutineScope(Dispatchers.IO).launch {
             try {

@@ -74,12 +74,11 @@ class CatalogoCurso : AppCompatActivity(), catalogoCursoVista {
         // Inicializar Presentador
         presentador = clsCatalogoCursoPresentadorImpl(this, RetrofitCliente.apiService)
 
-        // Cargar primera carrera o lista inicial
-        presentador.cargarCursos(carreraId = 1)
+        // Cargar carreras (el spinner dispara cargarCursos al seleccionar la primera)
+        presentador.cargarCarreras()
     }
 
     override fun mostrarCarreras(carreras: List<dataCarreras>) {
-        // Pasamos directamente la lista 'carreras' gracias a que dataCarreras ya tiene toString()
         val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, carreras)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spnCarrera.adapter = adapter
@@ -87,9 +86,7 @@ class CatalogoCurso : AppCompatActivity(), catalogoCursoVista {
         spnCarrera.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
                 if (carreras.isNotEmpty() && position < carreras.size) {
-                    val carreraSeleccionada = carreras[position]
-                    // Usamos carreraSeleccionada.id para pedir los cursos de esa carrera
-                    presentador.cargarCursos(carreraSeleccionada.id)
+                    presentador.cargarCursos(carreras[position].id)
                 }
             }
 
