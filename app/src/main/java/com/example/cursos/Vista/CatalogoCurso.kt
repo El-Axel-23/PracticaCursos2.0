@@ -79,15 +79,15 @@ class CatalogoCurso : AppCompatActivity(), catalogoCursoVista {
     }
 
     override fun mostrarCarreras(carreras: List<dataCarreras>) {
-        val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, carreras)
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        val lista = listOf(dataCarreras(0, "Todas las carreras")) + carreras
+
+        val adapter = ArrayAdapter(this, R.layout.spinner_item, lista)
+        adapter.setDropDownViewResource(R.layout.spinner_item)
         spnCarrera.adapter = adapter
 
         spnCarrera.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                if (carreras.isNotEmpty() && position < carreras.size) {
-                    presentador.cargarCursos(carreras[position].id)
-                }
+                presentador.cargarCursos(lista[position].id)
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {}
